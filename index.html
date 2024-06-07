@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html
+	lang="en"
+	data-theme="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Calculator App</title>
+		<script src="locals.js"></script>
+		<link
+			rel="stylesheet"
+			href="style.css" />
+		<link
+			rel="+shortcut icon"
+			href="img/favicon-32x32.png"
+			type="image/x-icon" />
+	</head>
+	<body>
+		<div class="calculator">
+			<div class="header">
+				<p>calc</p>
+				<div class="theme">
+					<p>theme</p>
+					<div class="range">
+						<div class="num">
+							<p>1</p>
+							<p>2</p>
+							<p>3</p>
+						</div>
+						<div class="input">
+							<div
+								class="ball"
+								id="dark"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="screen"></div>
+			<div class="calculator-btn-container">
+				<button data-operand>7</button>
+				<button data-operand>8</button>
+				<button data-operand>9</button>
+				<button data-delete>DEL</button>
+				<button data-operand>4</button>
+				<button data-operand>5</button>
+				<button data-operand>6</button>
+				<button data-operator>+</button>
+				<button data-operand>1</button>
+				<button data-operand>2</button>
+				<button data-operand>3</button>
+				<button data-operator>-</button>
+				<button data-operand>.</button>
+				<button data-operand>0</button>
+				<button data-operator>/</button>
+				<button data-operator>&times;</button>
+				<button
+					data-clear
+					class="span-2">
+					RESET
+				</button>
+				<button
+					data-equals
+					class="span-2">
+					=
+				</button>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>

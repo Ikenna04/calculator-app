@@ -1,0 +1,320 @@
+/* | IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+/* | CSS RESET  */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* | VARIABLES */
+:root[data-theme='dark'] {
+	/* | COLORS  */
+	--main-background: hsl(222, 26%, 31%);
+	--keypad-background: hsl(223, 31%, 20%);
+	--screen-background: hsl(224, 36%, 15%);
+
+	--del-key-background: hsl(225, 21%, 49%);
+	--del-key-shadow: hsl(224, 28%, 35%);
+
+	--equal-key-background: hsl(6, 63%, 50%);
+	--equal-key-shadow: hsl(6, 70%, 34%);
+
+	--num-key-background: hsl(30, 25%, 89%);
+	--num-key-shadow: hsl(28, 16%, 65%);
+
+	--num-color: hsl(221, 14%, 31%);
+	--equal-color: var(--white);
+	--white: hsl(0, 0%, 100%);
+	--header-color: var(--white);
+
+	/* | STYLE */
+	--margin: 0 auto;
+}
+
+:root[data-theme='light'] {
+	/* | COLORS */
+	--main-background: hsl(0, 0%, 90%);
+	--keypad-background: hsl(0, 5%, 81%);
+	--screen-background: hsl(0, 0%, 93%);
+
+	--del-key-background: hsl(185, 42%, 37%);
+	--del-key-shadow: hsl(185, 58%, 25%);
+
+	--equal-key-background: hsl(25, 98%, 40%);
+	--equal-key-shadow: hsl(25, 99%, 27%);
+
+	--num-key-background: hsl(45, 7%, 89%);
+	--num-key-shadow: hsl(35, 11%, 61%);
+
+	--num-color: hsl(60, 10%, 19%);
+	--equal-color: var(--white);
+	--white: hsl(0, 0%, 100%);
+	--header-color: var(--num-color);
+
+	/* || STYLE */
+	--margin: auto;
+}
+
+:root[data-theme='custom'] {
+	/* | COLORS */
+	--main-background: hsl(268, 75%, 9%);
+	--keypad-background: hsl(268, 71%, 12%);
+	--screen-background: var(--keypad-background);
+
+	--del-key-background: hsl(281, 89%, 26%);
+	--del-key-shadow: hsl(285, 91%, 52%);
+
+	--equal-key-background: hsl(176, 100%, 44%);
+	--equal-key-shadow: hsl(177, 92%, 70%);
+
+	--num-key-background: hsl(268, 47%, 21%);
+	--num-key-shadow: hsl(290, 70%, 36%);
+
+	--num-color: hsl(52, 100%, 62%);
+	--equal-color: hsl(198, 20%, 13%);
+	--white: hsl(0, 0%, 100%);
+	--header-color: var(--num-color);
+
+	/* || STYLE */
+	--margin: auto 0;
+}
+
+:root {
+	/* | FONTS  */
+	--screen-fonts: 800 50px 'League Spartan';
+	--num-fonts: 800 32px 'League Spartan';
+	--equal-fonts: var(--num-fonts);
+	--nums-fonts: 800 16px 'League Spartan';
+	--theme-fonts: 800 14px 'League Spartan';
+}
+
+/* | GENERAL STYLES */
+body {
+	width: 100%;
+	height: 100%;
+	padding: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--main-background);
+	font: var(--num-fonts);
+}
+
+.calculator {
+	width: 540px;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	gap: 24px;
+}
+
+.calculator > * {
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	color: var(--header-color);
+}
+
+.theme {
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	gap: 28px;
+}
+
+.theme > p {
+	margin-bottom: 5px;
+	font: var(--theme-fonts);
+}
+
+.range {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.range > * {
+	width: 100%;
+}
+
+.num {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font: var(--nums-fonts);
+}
+
+.input {
+	width: 70px;
+	height: 28px;
+	padding: 4px 7px;
+	background-color: var(--keypad-background);
+	border-radius: 50px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+.ball {
+	width: 18px;
+	height: 18px;
+	margin-inline: var(--margin);
+	border-radius: 50%;
+	background-color: var(--equal-key-background);
+}
+
+#screen {
+	height: 128px;
+	padding: 32px;
+	background-color: var(--screen-background);
+	font: var(--screen-fonts);
+	color: var(--header-color);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.calculator-btn-container {
+	padding: 30px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 60px;
+	grid-gap: 25px;
+	background-color: var(--keypad-background);
+}
+
+button {
+	border: none;
+	cursor: pointer;
+	background-color: var(--num-key-background);
+	color: var(--num-color);
+	font: var(--num-fonts);
+	border-radius: 10px;
+	box-shadow: 0 4px 0 0 var(--num-key-shadow);
+}
+
+button:hover {
+	filter: brightness(170%);
+}
+
+.span-2 {
+	grid-column: span 2;
+}
+
+button:is([data-clear], [data-delete]) {
+	font: var(--equal-fonts);
+	background-color: var(--del-key-background);
+	color: var(--white);
+	box-shadow: 0 4px 0 0 var(--del-key-shadow);
+}
+
+button[data-equals] {
+	font: var(--equal-fonts);
+	background-color: var(--equal-key-background);
+	color: var(--equal-color);
+	box-shadow: 0 4px 0 0 var(--equal-key-shadow);
+}
+
+@media screen and (max-width: 750px) {
+	:root {
+		/* | FONTS  */
+		--screen-fonts: 800 1.2em 'League Spartan';
+		--num-fonts: 800 60px 'League Spartan';
+		--equal-fonts: 800 0.7em 'League Spartan';
+		--nums-fonts: 800 0.5em 'League Spartan';
+		--theme-fonts: 800 0.4em 'League Spartan';
+	}
+
+	/* | GENERAL STYLES */
+	body {
+		padding: 1em 0.8em;
+	}
+
+	.calculator {
+		width: 100%;
+		gap: 0.8em;
+	}
+
+	.calculator > * {
+		border-radius: 0.3em;
+	}
+
+	.header {
+		margin-bottom: 0.3em;
+	}
+
+	.theme {
+		gap: 0.9em;
+	}
+
+	.theme > p {
+		margin-bottom: 0.2em;
+	}
+
+	.input {
+		width: 2.3em;
+		height: 0.9em;
+		padding: 0.2em;
+	}
+
+	.ball {
+		width: 0.6em;
+		height: 0.6em;
+	}
+
+	#screen {
+		height: 2.9em;
+		padding: 0.8em;
+	}
+
+	.calculator-btn-container {
+		padding: 0.8em;
+		grid-auto-rows: 2em;
+		grid-gap: 0.5em;
+	}
+
+	button {
+		border-radius: 0.3em;
+		box-shadow: 0 0.1em 0 0 var(--num-key-shadow);
+	}
+
+	button:is([data-clear], [data-delete]) {
+		box-shadow: 0 0.1em 0 0 var(--del-key-shadow);
+	}
+
+	button[data-equals] {
+		box-shadow: 0 0.1em 0 0 var(--equal-key-shadow);
+	}
+}
+
+@media screen and (max-width: 630px) {
+	:root {
+		/* | FONTS  */
+		--num-fonts: 800 45px 'League Spartan';
+	}
+}
+
+@media screen and (max-width: 500px) {
+	:root {
+		/* | FONTS  */
+		--num-fonts: 800 36px 'League Spartan';
+	}
+}
+
+@media screen and (max-width: 375px) {
+	:root {
+		/* | FONTS  */
+		--num-fonts: 800 30px 'League Spartan';
+	}
+}
